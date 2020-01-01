@@ -3,6 +3,7 @@
 	<head>
 		<title>One page site project</title>
 		<link rel="stylesheet" type="text/css" href="./css/one_page_website.css">
+		<script src="js/one_page_website.js"></script>
 	</head>
 	<body>
 		<div id="home">
@@ -14,9 +15,42 @@
 		</div>
 			<h1>Potato</h1>
 		<div id="gallery">
-			<img src="./images/potato_1.jpg" alt="A picture of a potato"><br>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/7VpzUYln8g4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<div class="row">
+				<div class="column">
+					<img src="images/potato_1.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow" alt="A picture of a potato"><br>
+				</div>
+				<div class="column">
+					<img src="images/potato_2.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow" alt="A picture of a potato">
+				</div>
+			</div>
 		</div>
+		<!-- Modal/Lightbox -->
+		<div id="myModal" class="modal">
+			<span class="close cursor" onclick="closeModal()">&times;</span>
+			<div class="modal-content">
+				<div class="mySlides">
+					<div class="numbertext">1 / 2</div>
+					<img src="images/potato_1.jpg" style="width: 100%">
+				</div>
+				<div class="mySlides">
+					<div class="numbertext">2 / 2</div>
+					<img src="images/potato_2.jpg" alt="">
+				</div>
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+				<div class="caption-container">
+					<p id="caption"></p>
+				</div>
+				<div class="column">
+					<img class="demo" src="images/potato_1.jpg" onclick="currentSlide(1)" alt="Potato pic #1">
+				</div>
+				<div class="column">
+					<img class="demo" src="images/potato_2.jpg" onclick="currentSlide(2)" alt="Potato pic #2">
+				</div>
+			</div>
+		</div>
+		<!-- End Modal/Lightbox -->
+		<br><br><br><br><br><br><br><br>
 		<div id="form">
 			<h2>Feedback is welcome!</h2>
 			<form action="" method"post">
