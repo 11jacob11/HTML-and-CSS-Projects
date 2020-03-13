@@ -9,29 +9,30 @@ function closeModal() {
 }
 
 var slideIndex = 1;
-showSlides(slideIndex);
+// showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
+  console.log("plusSlides has been activated")
   showSlides(slideIndex += n);
 }
 
 // Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+// function currentSlide(n) {
+//   showSlides(slideIndex = n);
+// }
 
 function showSlides(n) {
-  var i;
+  console.log("showSlides has been activated")
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("demo");
   var captionText = document.getElementById("caption");
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
+  for (var i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  for (i = 0; i < dots.length; i++) {
+  for (var i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
   slides[slideIndex-1].style.display = "block";
